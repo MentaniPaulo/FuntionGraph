@@ -41,7 +41,7 @@ namespace FuntionGraph
                 .Y(point => point.Y), // Define a function that returns a value that should map to the y-axis
                 Title = name,
                 Values = values,
-                //Stroke = System.Windows.Media.Brushes.Red,
+                //Stroke = System.Windows.Media.Brushes.Red, 
                 PointGeometry = null
             });
 
