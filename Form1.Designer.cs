@@ -30,20 +30,22 @@
         {
             this.cartesianChart1 = new LiveCharts.WinForms.CartesianChart();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.label1 = new System.Windows.Forms.Label();
             this.tb_funtion = new System.Windows.Forms.TextBox();
             this.btn_add_funtion = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
             this.flowLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // cartesianChart1
             // 
+            this.cartesianChart1.Cursor = System.Windows.Forms.Cursors.WaitCursor;
             this.cartesianChart1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.cartesianChart1.Location = new System.Drawing.Point(0, 0);
             this.cartesianChart1.Name = "cartesianChart1";
             this.cartesianChart1.Size = new System.Drawing.Size(800, 450);
             this.cartesianChart1.TabIndex = 0;
             this.cartesianChart1.Text = "cartesianChart1";
+            this.cartesianChart1.UseWaitCursor = true;
             // 
             // flowLayoutPanel1
             // 
@@ -55,6 +57,15 @@
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(181, 450);
             this.flowLayoutPanel1.TabIndex = 1;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(3, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(107, 13);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "Adicione uma função";
             // 
             // tb_funtion
             // 
@@ -72,15 +83,6 @@
             this.btn_add_funtion.Text = "Adicionar";
             this.btn_add_funtion.UseVisualStyleBackColor = true;
             this.btn_add_funtion.Click += new System.EventHandler(this.btn_add_funtion_Click);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(3, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(107, 13);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Adicione uma função";
             // 
             // Form1
             // 
