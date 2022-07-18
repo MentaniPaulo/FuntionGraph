@@ -31,11 +31,11 @@ namespace FuntionGraph
 
         }
 
-        private void graphDraw(ChartValues<Point> values, string name)
+        private void graphDraw(ChartValues<PointDouble> values, string name)
         {
             cartesianChart1.Series.Add(new LineSeries
             {
-                Configuration = new CartesianMapper<Point>()
+                Configuration = new CartesianMapper<PointDouble>()
                 .X(point => point.X) // Define a function that returns a value that should map to the x-axis
                 .Y(point => point.Y), // Define a function that returns a value that should map to the y-axis
                 Title = name,
@@ -46,12 +46,12 @@ namespace FuntionGraph
 
         }
 
-        private ChartValues<Point> CreateChartValues(List<double> x, List<double> y)
+        private ChartValues<PointDouble> CreateChartValues(List<double> x, List<double> y)
         {
-            var values = new ChartValues<Point>();
+            var values = new ChartValues<PointDouble>();
             for (int n = 0; n < x.Count; n++)
             {
-                var point = new Point() { X = (int)x.ElementAt(n), Y = (int)y.ElementAt(n) };
+                var point = new PointDouble() { X = x.ElementAt(n), Y = y.ElementAt(n) };
                 values.Add(point);
             }
             return values;
@@ -69,10 +69,10 @@ namespace FuntionGraph
             List<double> ListX = new List<double>();
 
             List<double> ListY = new List<double>();
-            for (double a = -100; a < +100; a++)
+            for (double a = -50; a < +50; a++)
             {
-        
-                string x_str = "x = " + a.ToString();
+               
+                string x_str = "x = " + a.ToString() + "/ 10";
                 Argument x = new Argument(x_str);
                 Argument y = new Argument(funtion, x);
                 Expression e = new Expression("y", y);
@@ -88,7 +88,13 @@ namespace FuntionGraph
         }
 
 
-        
+        private struct PointDouble
+        {
+            public double X;
+            public double Y;
+            
+        }
+
     }
 
  
