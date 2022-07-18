@@ -24,15 +24,14 @@ namespace FuntionGraph
         {
             
             InitializeComponent();
-            
-            
-            
-            //graphDraw(funtion(),"s");
+               
+          //graphDraw(funtion(),"s");
 
         }
 
         private void graphDraw(ChartValues<PointDouble> values, string name)
         {
+            //cartesianChart1.
             cartesianChart1.Series.Add(new LineSeries
             {
                 Configuration = new CartesianMapper<PointDouble>()
@@ -41,7 +40,10 @@ namespace FuntionGraph
                 Title = name,
                 Values = values,
                 //Stroke = System.Windows.Media.Brushes.Red, 
-                PointGeometry = null
+                PointGeometry = null,
+                //LineSmoothness = 1
+
+
             });
 
         }
@@ -61,6 +63,7 @@ namespace FuntionGraph
         {
             funtionMath = tb_funtion.Text;
             tb_funtion.Focus();
+            list_funtions.Items.Add(funtionMath);
             analiseFuntion(funtionMath);
         }
 
@@ -69,7 +72,7 @@ namespace FuntionGraph
             List<double> ListX = new List<double>();
 
             List<double> ListY = new List<double>();
-            for (double a = -50; a < +50; a++)
+            for (double a = -100; a < +100; a++)
             {
                
                 string x_str = "x = " + a.ToString() + "/ 10";
@@ -79,7 +82,7 @@ namespace FuntionGraph
                 ListX.Add(a);
                 ListY.Add(e.calculate());
             }
-            graphDraw(CreateChartValues(ListX, ListY),"test1");
+            graphDraw(CreateChartValues(ListX, ListY), funtionMath);
             //Argument x = new Argument("x = 5");
             //Argument y = new Argument(funtion, x);
             //Expression e = new Expression("y", y);
@@ -95,6 +98,16 @@ namespace FuntionGraph
             
         }
 
+        private void remove_all_Click(object sender, EventArgs e)
+        {
+            cartesianChart1.Series.Clear();
+            list_funtions.Items.Clear();
+        }
+
+        private void remove_selet_Click(object sender, EventArgs e)
+        {
+            //
+        }
     }
 
  
